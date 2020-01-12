@@ -55,11 +55,12 @@ public class RoverInstructionsInterpreter {
 
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new InvalidMarsInstructionsFileException("The Rover Instruction loader cannot find the specified instructions file " + fileName);
         }
+        String [] plateauStr = plateauSize.split(" ");
 
-        if (plateauSize == null || originCoordinates.size() != instructions.size()) {
+        if (plateauSize == null || plateauStr.length != 2 || originCoordinates.size() != instructions.size()) {
             throw new InvalidMarsInstructionsFileException("The instructions file provided its not following the Mars standards");
         }
 

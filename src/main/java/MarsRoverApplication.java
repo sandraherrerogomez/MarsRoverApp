@@ -1,4 +1,5 @@
 import exceptions.InvalidMarsInstructionsFileException;
+import exceptions.MarsOrderException;
 import exceptions.OutOfPlateauException;
 
 public class MarsRoverApplication {
@@ -18,6 +19,9 @@ public class MarsRoverApplication {
                 System.out.println(marsRover.getCoords() + " " + marsRover.getOrientation());
             } catch(OutOfPlateauException e) {
                 System.out.println(e.getMessage());
+            } catch(MarsOrderException e){
+                System.out.println(e.getMessage());
+
             }
         }
     }
